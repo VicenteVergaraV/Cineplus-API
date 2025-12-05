@@ -33,7 +33,7 @@ RUN apk add --no-cache \
 COPY package*.json ./
 
 # Instalar solo dependencias de producción
-RUN npm ci --only=production
+# RUN npm ci --only=production
 
 # Copiar build desde builder stage
 COPY --from=builder /app/dist ./dist
