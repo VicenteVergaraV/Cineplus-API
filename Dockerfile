@@ -35,6 +35,8 @@ COPY package*.json ./
 # Instalar solo dependencias de producción
 # RUN npm ci --only=production
 
+COPY --from=builder /app/node_modules ./node_modules
+
 # Copiar build desde builder stage
 COPY --from=builder /app/dist ./dist
 
